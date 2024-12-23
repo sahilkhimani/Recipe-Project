@@ -1,11 +1,18 @@
+<div class="row hiddenSec">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Recipe</button>
+    </div>
+</div>
+<hr/>
+
 <div class="row">
     <div class="col-xs-12">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8SSzJv1gFTcR1OB-jp8RBERCcHBUr0kpFRw&s" alt="" class="img-fluid">
+        <img [src]="recipe.recipeImageUrl" alt="{{recipe.recipeName}}" class="img-fluid">
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1>Recipe Name</h1>
+        <h1>{{ recipe.recipeName }}</h1>
     </div>
 </div>
 <div class="row">
@@ -22,7 +29,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        Description
+        {{ recipe.recipeDescription }}
     </div>
 </div>
 <div class="row">
