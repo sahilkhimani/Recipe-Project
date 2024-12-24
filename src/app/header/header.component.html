@@ -6,16 +6,17 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="#" (click)="menuSelected(recipeMenu)">Recipes</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" (click)="menuSelected(shoppingListMenu)">Shopping List</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" (click)="menuSelected(shoppingListMenu)">Shopping
+                        List</a></li>
             </ul>
-            <ul class="nav navbar-nav ms-auto">
-                <li class="dropdown nav-item">
-                    <a href="#" class="nav-link dropdown-toggle">Manage</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Save Data</a></li>
-                        <li><a class="dropdown-item" href="#">Fetch Data</a></li>
-                    </ul>
-                </li>
+            <ul class="nav navbar-nav ms-auto ">
+                <div appDropdown class="dropdown">
+                    <button class="nav-link dropdown-toggle">Manage</button>
+                    <div class="dropdown-menu" style="right: 0;">
+                        <a class="dropdown-item" href="#">Save Data</a>
+                        <a class="dropdown-item" href="#">Fetch Data</a>
+                    </div>
+                </div>
             </ul>
         </div>
     </div>
