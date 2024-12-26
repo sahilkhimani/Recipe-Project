@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { CommonModule } from '@angular/common';
+import { ShoppingListService } from './services/shopping-list.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import { CommonModule } from '@angular/common';
      CommonModule
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  providers : [ShoppingListService]
 })
 export class AppComponent {
   public recipeMenu = 'recipe';

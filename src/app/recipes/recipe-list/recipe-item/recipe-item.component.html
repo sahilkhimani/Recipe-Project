@@ -1,11 +1,11 @@
 <ul class="list-group">
     <a href="#" class="list-group-item clearfix border" (click)="onSelectedRecipe()">
         <div class="float-start ps-2">
-            <h4 class="list-group-item-heading">{{ recipeItem.recipeName }}</h4>
-            <p class="list-group-item-text">{{ recipeItem.recipeDescription }}</p>
+            <h4 class="list-group-item-heading">{{ recipeItem?.recipeName }}</h4>
+            <p class="list-group-item-text">{{ recipeItem?.recipeDescription }}</p>
         </div>
         <span class="float-end pe-2">
-            <img [src]="recipeItem.recipeImageUrl" class="img-fluid" alt="{{ recipeItem.recipeName }}" [style]="'max-width : 4rem; object-fit : fill'">
+            <img [src]="recipeItem?.recipeImageUrl" class="img-fluid" alt="{{ recipeItem?.recipeName }}" [style]="'max-width : 4rem; object-fit : fill'">
         </span>
     </a>
     </ul>
