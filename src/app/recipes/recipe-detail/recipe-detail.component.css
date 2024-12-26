@@ -5,3 +5,7 @@ img{
 .hiddenSec{
     visibility:hidden;
 }
+
+a{
+    cursor: pointer;    
+}
