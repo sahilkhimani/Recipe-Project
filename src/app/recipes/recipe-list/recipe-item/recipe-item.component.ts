@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecipeModel } from '../../recipe.model';
-import { RecipeService } from '../../../services/recipe.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
