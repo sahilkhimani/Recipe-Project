@@ -3,10 +3,11 @@ import { IngredientModel } from '../../shared/ingredients.model';
 import { ShoppingListService } from '../../services/shopping-list.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-shopping-edits',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './shopping-edits.component.html',
   styleUrl: './shopping-edits.component.css'
 })
@@ -36,7 +37,24 @@ export class ShoppingEditsComponent implements OnInit, OnDestroy {
   onAddItem(formData: NgForm) {
     const ingName = formData.value['name'];
     const ingAmount = formData.value['amount'];
-    this.shoppingListService.onIngredientAdd(new IngredientModel(ingName, ingAmount))
+    if(this.editMode){
+      this.shoppingListService.updateIngredient(this.editIndex!, new IngredientModel(ingName, ingAmount));
+    }
+    else{
+      this.shoppingListService.onIngredientAdd(new IngredientModel(ingName, ingAmount));
+    }
+    this.editMode = false;
+   formData.reset();
+  }
+
+  clearFields(){
+    this.editMode = false;
+    this.formVal?.reset();
+  }
+
+  deleteItem(){
+    this.shoppingListService.deleteIngredient(this.editIndex!);
+    this.clearFields();
   }
 
   ngOnDestroy(): void {

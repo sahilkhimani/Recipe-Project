@@ -23,7 +23,15 @@ export class ShoppingListService {
       this.ingredients.push(ingredientData);
     }
 
+    updateIngredient(index : number, newIngredient : IngredientModel){
+      this.ingredients[index] = newIngredient;
+    }
+
     onAddShoppingList(ingredient : IngredientModel[]){
       this.ingredients.push(...ingredient);
+    }
+
+    deleteIngredient(index: number){
+      this.ingredients.splice(index,1);
     }
 }

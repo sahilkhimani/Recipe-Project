@@ -38,4 +38,15 @@ export class RecipeService {
         this.shoppingListService.onAddShoppingList(ingredient);
       }
 
+      addRecipe(recipe : RecipeModel){
+        this.recipes.push(recipe);
+      }
+
+      updateRecipe(index : number, newRecipe : RecipeModel){
+        this.recipes[index] = newRecipe;
+      }
+
+      deleteRecipe(index : number){
+        this.recipes.splice(index , 1);
+      }
 }

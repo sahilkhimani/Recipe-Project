@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { CommonModule } from '@angular/common';
 import { ShoppingListService } from './services/shopping-list.service';
+import { RecipeService } from './services/recipe.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +12,8 @@ import { ShoppingListService } from './services/shopping-list.service';
     CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  providers : [ShoppingListService]
+  providers : [ShoppingListService, RecipeService]
 })
 export class AppComponent {
-  // public recipeMenu = 'recipe';
-  // public shoppingListMenu = 'shopping-list';
   title = 'angular-project';
-  // selectedMenu = 'recipe';
-  // menuSelected(menuItem: string) {
-  //   this.selectedMenu = menuItem;
-  // }
 }
